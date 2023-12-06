@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1639712055_328-catherineasquithgallery-com-p-fon-anime-dlya-intro-rozovii-448.jpg" />
+    <None Remove="76790d44822742a9cb729bc927c3d969.jpg" />
+    <None Remove="9eee9a8050f7d2cefac161273cbfe161.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Picture\1639712055_328-catherineasquithgallery-com-p-fon-anime-dlya-intro-rozovii-448.jpg" />
+    <Resource Include="Picture\76790d44822742a9cb729bc927c3d969.jpg" />
+    <Resource Include="Picture\9eee9a8050f7d2cefac161273cbfe161.jpeg" />
+  </ItemGroup>
+
+</Project>

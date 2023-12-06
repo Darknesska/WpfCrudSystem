@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfCrudSystem.KorzinaWpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCrudSystem"
+        mc:Ignorable="d"
+        Title="KorzinaWpf" Height="450" Width="900">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\Darknes\source\repos\WpfCrudSystem\WpfCrudSystem\Picture\1639712055_328-catherineasquithgallery-com-p-fon-anime-dlya-intro-rozovii-448.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <ListView x:Name="listTovar" Background="Black" d:ItemsSource="{d:SampleData ItemCount=5}" />
+        </Grid>
+        <Grid Grid.Row="0">
+            <Label Content="Выход: " HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="200" Margin="5,0,0,0"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="SortDir" SelectedIndex="0" SelectionChanged="SortDir_SelectionChanged" Margin="60,31,60,0" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="SortBy" SelectedIndex="0" Grid.Column="2" SelectionChanged="SortBy_SelectionChanged" Margin="0,31,0,0"/>
+            <ComboBox x:Name="SortCategory" SelectedIndex="0" Grid.Column="3" SelectionChanged="SortCategory_SelectionChanged" Margin="60,31,60,0" Grid.ColumnSpan="2"/>
+            <Button x:Name="but3" Content="гость" Click="but3_Click" Margin="-222,31,142,0" Background="#FF6D1261"/>
+            <Label Content="Сортировка By/Dir" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Margin="60,0,0,0"/>
+            <Label Content="Фильтр" HorizontalAlignment="Center" Height="31" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+            <Label Content="Категории" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="120" Grid.Column="3" Grid.ColumnSpan="2" Margin="60,0,0,0"/>
+            <Button Grid.Column="4" Content="не" HorizontalAlignment="Left" Margin="108,0,0,0" VerticalAlignment="Top" Height="15" Width="12" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="poisk" Grid.Row="3" Content="Отправка на сервер" Click="poisk_Click" Margin="0,44,0,74" Grid.RowSpan="2" Background="#FF801371"/>
+            <Button x:Name="buy" Content="Купить" Click="buy_Click" Margin="0,43,0,0" Grid.Row="2" Background="#FF7E116F" />
+            <Button x:Name="back" Grid.Row="4" Content="Назад" Click="back_Click" Margin="0,42,0,0" Background="#FF79146C"  />
+            <TextBox x:Name="text1"  Grid.Column="0" TextChanged="text1_TextChanged" Margin="0,74,0,74" Grid.RowSpan="3"/>
+            <Label Content="Поиск по словам" HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="200" Margin="0,25,0,0"/>
+        </Grid>
+
+    </Grid>
+</Window>

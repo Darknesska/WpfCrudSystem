@@ -1,0 +1,70 @@
+﻿<Window x:Class="WpfCrudSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCrudSystem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\Darknes\source\repos\WpfCrudSystem\WpfCrudSystem\Picture\1639712055_328-catherineasquithgallery-com-p-fon-anime-dlya-intro-rozovii-448.jpg"/>
+    </Window.Background>
+    <Grid RenderTransformOrigin="0.678,0.613">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <ListView x:Name="listTovarov" Background="Black" />
+        </Grid>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="190" Grid.ColumnSpan="3" Margin="0,1,0,0">
+                <Label Content="Поиск по словам" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="180"/>
+            </Label>
+            <TextBox x:Name="text1"  Grid.Column="0" TextChanged="text1_TextChanged" Margin="0,31,0,0" Grid.ColumnSpan="3"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="SortCategory" SelectedIndex="0" Grid.Column="2" SelectionChanged="SortCategory_SelectionChanged" Height="31" VerticalAlignment="Top" Margin="70,30,50,0" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="SortDir" SelectedIndex="0" SelectionChanged="SortDir_SelectionChanged" Margin="60,30,60,1" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="SortBy" SelectedIndex="0" Grid.Column="1" SelectionChanged="SortBy_SelectionChanged" Margin="65,30,55,1" Grid.ColumnSpan="2"/>
+            <Label Content="Категории" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="68" Margin="86,-3,0,0" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Label Content="Фильтр" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="52" Grid.Column="1" RenderTransformOrigin="0.477,0.256" Grid.ColumnSpan="2" Margin="93,-1,0,0"/>
+            <Label Content="Sort by/dir" HorizontalAlignment="Left" Margin="87,0,0,0" VerticalAlignment="Top" Height="33" Width="66" Grid.ColumnSpan="2"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button Background="#FFCF35C1" x:Name="addinmag" Grid.Row="3" Content="Добавить В корзину" Click="addinmag_Click" Margin="0,38,0,74" Grid.RowSpan="2"/>
+            <Button Background="#FFCF35C1" x:Name="korzina" Grid.Row="4" Content="Kорзина" Click="korzina_Click" Margin="0,18,0,18"/>
+            <TextBox x:Name="numeric" Grid.Row="2" TextChanged="numeric_TextChanged" Margin="0,37,0,74" Grid.RowSpan="2" Text="1&#xD;&#xA;"/>
+            <Label Content="Введите количество товара" Width="200" Margin="0,74,0,37" HorizontalAlignment="Center" Grid.RowSpan="2" Grid.Row="1"/>
+            <Button Background="#FFCF35C1" Content="Помощь" HorizontalAlignment="Center" VerticalAlignment="Top" Height="28" Width="200" Margin="0,38,0,0" Grid.Row="1" Click="Button_Click"/>
+            <Button  x:Name="but3" Content="гость" Click="but3_Click" Margin="0,43,0,0" Background="#FFCF35C1"/>
+            <Label Content="Выход" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        </Grid>
+
+
+    </Grid>
+</Window>
